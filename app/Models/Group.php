@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
+
+    public function department() {
+        return $this->hasOne(Department::class);
+    }
 }

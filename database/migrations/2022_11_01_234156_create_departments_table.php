@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
-            $table->tinyInteger('status_active');
+            $table->string('name');
+            $table->tinyInteger('isActive')->default(0);
             $table->foreignId('group_id');
             $table->timestamps();
         });

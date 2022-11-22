@@ -10,21 +10,28 @@
                     
                     <table class="table table-bordered">
                         <tr>
+                            <th colspan="4">Engineering</th>
+                        </tr>
+                        <tr>
                             <th>No</th>
                             <th>Employee Name</th>
-                            <th>Department</th>
                             <th>Position</th>
                             <th>Extension No</th>
                         </tr>
+                        @if ($assigns->count())
                         @foreach ($assigns as $assign)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td>{{ $assign->employee->name }}</td>
-                          <td>{{ $assign->employee->department_id }}</td>
-                          <td>{{ $assign->employee->position_id }}</td>
+                          <td>{{ $assign->employee->position->name }}</td>
                           <td>{{ $assign->extension->no }}</td>
                         </tr>
                         @endforeach
+                        @else
+                        <tr>
+                            <td colspan="4" class="text-center">There is no data available at the moment.</td>
+                        </tr> 
+                        @endif
                     </table>
             </div>
         </div>

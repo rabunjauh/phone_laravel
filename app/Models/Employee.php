@@ -14,4 +14,16 @@ class Employee extends Model
     public function assign() {
         return $this->hasOne(Assign::class);
     }
+
+    public function department() {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function position() {
+        return $this->belongsTo(Position::class);
+    }
+
+    public function office() {
+        return $this->belongsTo(Office::class);
+    }
 }

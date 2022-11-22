@@ -10,4 +10,8 @@ class Extension extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function assign() {
+        return $this->hasMany(Assign::class);
+    }
 }

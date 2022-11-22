@@ -1,0 +1,40 @@
+@extends('layouts.main')
+
+@section('container')
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="mb-5">{{ $title }}</h1>
+
+                    <table class="table table-bordered">
+                        <thead>
+                          <th>No</th>
+                          <th>Position Name</th>
+                          <th>Level</th>
+                        </thead>
+                        <tbody>
+                          @if ($positions->count())
+                            @foreach ($positions as $position)
+                            <tr>
+                              <td>
+                                {{ $loop->iteration }}  
+                              </td>  
+                              <td>
+                                {{ $position->name }}  
+                              </td>  
+                              <td>
+                                {{ $position->level }}  
+                              </td>  
+                            </tr>
+                            @endforeach    
+                          @else
+                            <tr>
+                              <td colspan="2" class="text-center">There is no data available at the moment.</td>
+                            </tr>   
+                          @endif
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+@endsection
